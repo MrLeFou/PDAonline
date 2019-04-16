@@ -9,10 +9,6 @@ export default {
             type: Object,
             required: true,
         },
-        selectedYear: {
-            type: Number,
-            required: true,
-        }
     },
     computed: {
         selectedMonthModel: {

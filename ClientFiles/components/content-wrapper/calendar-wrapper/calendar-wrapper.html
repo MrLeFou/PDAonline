@@ -1,8 +1,7 @@
 <div class="calendar-wrapper">
     <template v-if="!busy">
-        <Filters :months="months" :selected-month="selectedMonth" 
-            @month-changed="onMonthChanged" :selected-year="selectedYear"/>
-        <Calendar :months="months" :selected-month="selectedMonth" :selected-year="selectedYear"/>
+        <Filters :months="months" :selected-month="selectedMonth" @month-changed="onMonthChanged"/>
+        <Calendar :tasks="tasksInSelectedMonth" :months="months" :selected-month="selectedMonth" :selected-year="selectedYear"/>
     </template>
     <div v-else>
         Loading...

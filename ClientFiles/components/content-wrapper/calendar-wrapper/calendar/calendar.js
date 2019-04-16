@@ -1,5 +1,10 @@
+import Day from "./day";
+
 export default {
     name: "Calendar",
+    components: {
+        Day,
+    },
     props: {
         months: {
             type: Array,
@@ -12,16 +17,23 @@ export default {
         selectedYear: {
             type: Number,
             required: true,
-        }
+        },
+        tasks: {
+            type: Array,
+            required: true,
+        },
+    },
+    data() {
+        return {
+            day: 1,
+        };
     },
     computed: {
-        selectedMonthModel: {
-            get() {
-                return this.months.find(m => m.index === this.selectedMonth.index);
-            },
-            set(value) {
-                this.$emit("month-changed", value)
-            }
+        dayTasks() {
+            return this.tasks.filter(t => t.date.day() === this.day);
+        },
+        tasksInSelectedMonth() {
+            return this.tasks.filter(t => t.date.month() === this.selectedMonth.index);
         }
     },
 };
