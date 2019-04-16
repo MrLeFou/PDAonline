@@ -5,3 +5,11 @@
     flex-grow: 3;
     flex-direction: row;
 }
+
+.day {
+    display: flex;
+    width: 14.28%;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    box-sizing: border-box;
+}

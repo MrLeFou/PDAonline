@@ -25,15 +25,16 @@ export default {
     },
     data() {
         return {
-            day: 1,
+
         };
     },
-    computed: {
-        dayTasks() {
-            return this.tasks.filter(t => t.date.day() === this.day);
+    methods: {
+        dayTasks(day) {
+            console.log(day);
+            return this.tasks.filter(t => t.date.day() === day);
         },
-        tasksInSelectedMonth() {
-            return this.tasks.filter(t => t.date.month() === this.selectedMonth.index);
-        }
+    },
+    created() {
+
     },
 };

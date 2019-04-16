@@ -45,30 +45,22 @@ export default {
         },
         fillTasks() {
             this.tasks = [];
-            for (let i = 4; i < 13; i++) {
-                this.tasks.push({
-                    id: i * 5,
-                    name: "Tarea " + i + "/A",
-                    date: moment("2019-0" + i + "-" + i * 2 + " 13:00:00"),
-                    finishedOn: moment("2019-0" + i + "-" + i * 2 + " 14:00:00"),
-                    description: "Tarea A en este mes",
-                })
-                this.tasks.push({
-                    id: i * 13,
-                    name: "Tarea " + i + "/B",
-                    date: moment("2019-0" + i + "-" + i * 2 + " 15:00:00"),
-                    finishedOn: moment("2019-0" + i + "-" + i * 2 + " 16:00:00"),
-                    description: "Tarea B en este mes",
-                })
-                this.tasks.push({
-                    id: i * 17,
-                    name: "Tarea " + i + "/C",
-                    date: moment("2019-0" + i + "-" + i * 2 + " 18:00:00"),
-                    finishedOn: moment("2019-0" + i + "-" + i * 2 + " 19:00:00"),
-                    description: "Tarea C en este mes",
-                })
+            for (let i = 1; i < 13; i++) {
+                for (let j = 1; j < 4; j += 2) {
+                    console.log(i);
+                    console.log(j);
+                    console.log(i * j);
+                    console.log(moment().month(i).day(i * j));
+                    this.tasks.push({
+                        id: i * j * 7,
+                        name: "Tarea " + i * j * 7,
+                        date: moment().month(i).day(i * j),
+                        finishedOn: moment().month(i).day((i * 2) + 1),
+                        description: "Tarea A en este mes",
+                    })
+                }
             }
-        }
+        },
     },
     created() {
         this.busy = true;
