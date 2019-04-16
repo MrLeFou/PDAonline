@@ -1,0 +1,7 @@
+.calendar-wrapper{
+    background-color: aqua;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    margin: 2em;
+}

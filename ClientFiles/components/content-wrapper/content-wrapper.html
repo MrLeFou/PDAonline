@@ -1,0 +1,9 @@
+<div class="content-wrapper">
+    <h2>Esto será un calendario ...</h2>
+    <select v-model="selectedYear">
+        <option v-for="year in years" :value="year">
+            <span>{{year}}</span>
+        </option>
+    </select>
+    <CalendarWrapper :selected-year="selectedYear"/>
+</div>

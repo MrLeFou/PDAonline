@@ -1,0 +1,16 @@
+.nav {
+    background-color: green;
+    color: #ffffff;
+    display: flex;
+    align-content: space-between;
+}
+
+.nav-title, .nav-user {
+    display: flex;
+    flex: 1;
+    padding: 1rem;
+}
+
+.nav-user{
+    justify-content: flex-end;
+}

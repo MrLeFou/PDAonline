@@ -1,0 +1,8 @@
+<div class="calendar-filters">
+    <span>Esto son los filtros</span>
+    <select v-model="selectedMonthModel">
+        <option v-for="month in months" :key="month.index" :value="month">
+            <span>{{month.displayName}}</span>
+        </option>
+    </select>
+</div>
