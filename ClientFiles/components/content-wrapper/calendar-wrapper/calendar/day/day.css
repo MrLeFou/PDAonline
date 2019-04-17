@@ -1,8 +1,21 @@
 .day {
     display: flex;
-
-    width: 14.28%;
+    flex-basis: 14.285%;
+    align-self: auto;
     border-right: 1px solid black;
     border-bottom: 1px solid black;
     box-sizing: border-box;
+    flex-direction: column;
+    background-color: deepskyblue;
+}
+
+.day-header {
+    padding: 0.5rem;
+    text-align: center;
+    border-bottom: 1px solid black;
+}
+
+.day-content {
+    background-color: burlywood;
+    flex-grow: 1;
 }

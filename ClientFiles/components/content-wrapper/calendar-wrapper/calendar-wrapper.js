@@ -45,18 +45,14 @@ export default {
         },
         fillTasks() {
             this.tasks = [];
-            for (let i = 1; i < 13; i++) {
-                for (let j = 1; j < 4; j += 2) {
-                    console.log(i);
-                    console.log(j);
-                    console.log(i * j);
-                    console.log(moment().month(i).day(i * j));
+            for (let i = 0; i < 12; i++) {
+                for (let j = 1; j < 4; j ++) {
                     this.tasks.push({
-                        id: i * j * 7,
-                        name: "Tarea " + i * j * 7,
-                        date: moment().month(i).day(i * j),
-                        finishedOn: moment().month(i).day((i * 2) + 1),
-                        description: "Tarea A en este mes",
+                        id: i * j,
+                        name: 'T: ' + i * j,
+                        date: moment().month(i).add(j, 'days'),
+                        finishedOn: moment().month(i),
+                        description: `Mes ${i+1}, Offset ${j}`,
                     })
                 }
             }

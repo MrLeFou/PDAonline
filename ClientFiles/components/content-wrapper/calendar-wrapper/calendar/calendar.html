@@ -1,5 +1,5 @@
 <div class="calendar">
-        <div class="day" v-for="day in selectedMonth.days" :key="day">
-            <Day :tasks="tasks" :day="day"/>
-        </div>
+        <Day v-for="day in selectedMonth.days" :key="day" :tasks="tasks" :day="day">
+            
+        </Day>
 </div>

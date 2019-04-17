@@ -4,11 +4,14 @@
     flex-wrap: wrap;
     flex-grow: 3;
     flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
 }
 
 .day {
     display: flex;
-    width: 14.28%;
+    flex-basis: 14%;
+    align-self: auto;
     border-right: 1px solid black;
     border-bottom: 1px solid black;
     box-sizing: border-box;

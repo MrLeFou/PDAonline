@@ -1,7 +1,16 @@
 .task {
     display: flex;
-    width: 14.28%;
-    border-right: 1px solid black;
-    border-bottom: 1px solid black;
+    width: 100%;
     box-sizing: border-box;
+    flex-direction: column;
+}
+
+.task-header {
+    text-align: center;
+    border-bottom: 1px dashed black;
+}
+
+.task-content {
+    flex-grow: 1;
+    align-self: center;
 }

@@ -30,7 +30,6 @@ export default {
     },
     methods: {
         dayTasks(day) {
-            console.log(day);
             return this.tasks.filter(t => t.date.day() === day);
         },
     },

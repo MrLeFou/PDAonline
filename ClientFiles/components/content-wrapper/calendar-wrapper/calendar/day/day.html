@@ -1,6 +1,10 @@
 <div class="day">
-    <span>{{ day }}</span>
-    <div v-for="(task,idx) in dayTasks" key="idx">
-        <Task :task="task"/>
+    <div class="day-header">
+        <span>{{ day }}</span>
+    </div>
+    <div class="day-content">
+        <Task class="task" v-for="(task,idx) in dayTasks" key="idx" :task="task">
+        
+        </Task>
     </div>
 </div>
