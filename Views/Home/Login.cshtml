@@ -1,0 +1,38 @@
+﻿@model MyProject.Models.Customer
+@{
+    ViewBag.Message = "Login";
+}
+
+<h2>Login</h2>
+@using (Html.BeginForm("Login", "Home", FormMethod.Post))
+{
+    //this is for create form tag
+    @Html.AntiForgeryToken() // this is for prevent CSRF attack
+    @Html.ValidationSummary(true)
+    <table>
+        <tr>
+            <td>@Html.LabelFor(a => a.CustomerName)</td>
+            <td>@Html.TextBoxFor(a => a.CustomerName)</td>
+            <td>@Html.ValidationMessageFor(a => a.CustomerName)</td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(a => a.CustomerPassword)
+            </td>
+            <td>
+                @Html.PasswordFor(a => a.CustomerPassword)
+            </td>
+            <td>
+                @Html.ValidationMessageFor(a => a.CustomerPassword)
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" value="Login" />
+            </td>
+            <td></td>
+        </tr>
+    </table>
+    @Html.ActionLink("Register", "Register", "Home")
+}

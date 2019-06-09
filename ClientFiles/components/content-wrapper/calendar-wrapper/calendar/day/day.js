@@ -1,4 +1,5 @@
 import Task from "./task";
+import moment from 'moment';
 
 export default {
     name: "Day",

@@ -1,4 +1,5 @@
 import Day from "./day";
+import moment from 'moment';
 
 export default {
     name: "Calendar",

@@ -1,4 +1,5 @@
 import moment from 'moment';
+//import axios from 'axios';
 
 import Filters from "./calendar-filters"
 import Calendar from "./calendar"
@@ -15,7 +16,7 @@ export default {
         },
     },
     watch: {
-        selectedYear(){
+        selectedYear() {
             this.fillMonths();
         }
     },
@@ -27,12 +28,12 @@ export default {
         };
     },
     methods: {
-        fillMonths(){
+        fillMonths() {
             this.months = [];
-            
+
             for (let i = 0; i < 12; i++) {
                 let month = moment().month(i).year(this.selectedYear);
-    
+
                 this.months.push({
                     displayName: month.format("MMMM"),
                     index: i,
@@ -56,6 +57,9 @@ export default {
                     })
                 }
             }
+            //this.tasks = axios.get('http://localhost:58484/GetDuties').
+            //const response = axios.get('http://localhost:58484/GetDuties')
+            //this.tasks = response.data;
         },
     },
     created() {
