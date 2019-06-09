@@ -1,0 +1,50 @@
+CREATE DATABASE PDAppDb;
+
+USE PDAppDb;
+
+GO
+
+CREATE TABLE dbo.Customer
+(
+	CustomerID int IDENTITY(1,1)
+		PRIMARY KEY CLUSTERED,
+	Email varchar(70),
+	CustomerName varchar(30),
+	CustomerPassword varchar(30)
+);
+
+GO
+
+CREATE TABLE dbo.DutyPriority
+(
+	PriorityLevel int IDENTITY(1,1)
+		PRIMARY KEY CLUSTERED,
+	PriorityDescription varchar(20)
+);
+
+GO
+
+CREATE TABLE dbo.Duty
+(
+	DutyID int IDENTITY(1,1)
+		PRIMARY KEY CLUSTERED,
+	CustomerID int
+		REFERENCES Customer(CustomerID),
+	StartTime datetime2,
+	EndTime datetime2,
+	PriorityLevel int
+		REFERENCES DutyPriority(PriorityLevel),
+	DutyDescription varchar(250)
+);
+
+GO
+
+INSERT DutyPriority
+	(PriorityDescription)
+VALUES
+	('Baja'),('Media'),('Alta'),('Urgente');
+
+INSERT Customer
+	(Email, CustomerName, CustomerPassword)
+VALUES
+	('carlos@carlos.com','Carlos','Carlos_1');
