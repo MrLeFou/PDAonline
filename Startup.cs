@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.Webpack;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using MyProject.Models;
 
 namespace MyProject {
 	public class Startup {
@@ -14,7 +16,9 @@ namespace MyProject {
 
 		// This method gets called by the runtime. Use this method to add services to the container.
 		public void ConfigureServices(IServiceCollection services) {
-			services.AddMvc();
+            services.AddDbContext<PdaContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddMvc();
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -33,8 +37,8 @@ namespace MyProject {
 				routes => {
 					routes.MapRoute(
 						"default",
-						"{controller=Home}/{action=Index}/{id?}");
-				});
+						"{controller=Home}/{action=Login}/{id?}");
+                });
 		}
 	}
 }
