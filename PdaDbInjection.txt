@@ -11,7 +11,7 @@ CREATE TABLE dbo.Customer
 	CustomerID int IDENTITY(1,1)
 		PRIMARY KEY CLUSTERED,
 	Email varchar(70),
-	CustomerName varchar(30),
+	CustomerName varchar(30) UNIQUE,
 	CustomerPassword varchar(30)
 );
 
