@@ -1,5 +1,7 @@
 CREATE DATABASE PDAppDb;
 
+GO
+
 USE PDAppDb;
 
 GO
